@@ -34,7 +34,7 @@ EC="\[\e[0m\]"
 if [[ "$(basename -- "$0")" == "$SCRIPT_NAME" ]]; then
 	echo "* Executing script"
 	FOLDER_PATH=$(dirname $( realpath $0 ))
-	echo "* Panson folder at $FOLDER_PATH"
+	echo "* Project folder at $FOLDER_PATH"
 else
 	echo "* Sourcing script"
 	echo "* Project folder at $FOLDER_PATH"
@@ -170,10 +170,10 @@ test (){
     if [[ "$*" == *"debug"* ]]; then
         local title="$title --debug"
         echo -en "\033]0;$title\a"
-        flask --app main run --host="127.0.0.1" --port=5000 --debug
+        flask --app web/main run --host="127.0.0.1" --port=5000 --debug
     else
         echo -en "\033]0;$title\a"
-        flask --app main run --host="127.0.0.1" --port=5000
+        flask --app web/main run --host="127.0.0.1" --port=5000
     fi
 
 
@@ -181,7 +181,7 @@ test (){
 }
 upload (){
   echo -en "\033]0;Cloud Upload\a"
-	cd $FOLDER_PATH && gcloud storage cp -r ./static/* gs://panson.firebasestorage.app/
+	cd $FOLDER_PATH && gcloud storage cp -r ./static/* gs://${PROJECT_NAME}.firebasestorage.app/
 }
 
 deploy (){

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ lan }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% block head %}
+    <title>ORIOL MORA</title>
+{% endblock %}
+    <link href='/style/base.css' as='style' rel='preload'>
+    <link href='/style/header.css' as='style' rel='preload'>
+    <link href='/style/footer.css' as='style' rel='preload'>
+
+
+    <link href='/style/base.css' rel='stylesheet'>
+    <link href='/style/header.css' rel='stylesheet'>
+    <link href='/style/footer.css' rel='stylesheet'>
+    <script defer type="text/javascript" src="/scripts/base.js"></script>
+    <script defer type="text/javascript" src="/scripts/header.js"></script>
+{% block imports %}
+{% endblock %}
+</head>
+
+<body>
+{% include "header.html" %}
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+{% include "footer.html" %}
+</body>

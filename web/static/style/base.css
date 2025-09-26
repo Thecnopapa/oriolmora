@@ -1,0 +1,107 @@
+
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+
+/*@font-face {
+  font-family: myFont;
+  src: url('/static/fonts/AlteHaasGroteskRegular.ttf');
+}
+
+* {
+    font-family: myFont;
+}*/
+
+
+*{
+	font-size: 1em;
+    -moz-user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none; /* Standard syntax */
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    --padding: 1vw; /* GLOBAL PADDING */
+    --padding-large: 8vh;
+	font-size: 16px; /* GLOBAL FONT-SIZE */
+
+    --padding-horizontal: 0 var(--padding);
+    --padding-vertical: var(--padding) 0;
+    --padded-width: calc(100% - var(--padding) * 2);
+    --padded-height: calc(100% - var(--padding) * 2);
+    --white: white;
+    --white-transparent: #FFFFFFCC;
+    --black: black;
+
+}
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+*{
+	font-size: 1em;
+    scroll-behavior:smooth;
+}
+
+/* KEYWORDS */
+
+.hidden{
+	display: none;
+}
+.invisible{
+    visibility: hidden;
+}
+
+/* END KEYWORDS */
+
+body {
+    padding: 0 0;
+    margin: 0 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#content{
+    min-height: calc(84vh - var(--padding) * 2);
+    min-width: var(--padded-width);
+    position: relative;
+    margin-top: 8vh;
+    left: 0;
+    z-index: 10;
+    padding: var(--padding);
+    background-image: url("/media/paper.png");
+
+
+}
