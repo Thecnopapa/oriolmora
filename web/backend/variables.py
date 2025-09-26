@@ -7,7 +7,10 @@ STORAGE_URL = "https://firebasestorage.googleapis.com/v0/b/oriolmora.firebasesto
 STORAGE_URL_SINGLE = "https://firebasestorage.googleapis.com/v0/b/oriolmora.firebasestorage.app/o/{}?alt=media"
 
 
-
+SECRET_URLS = dict(
+    flask = "",
+    service_account = "",
+)
 
 
 

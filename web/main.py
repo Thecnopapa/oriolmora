@@ -43,8 +43,6 @@ def make_session_permanent():
 
 ### CONTEXT IMPORTS ####################################################################################################
 
-from backend.admin import *
-from backend.database import *
 from backend.pages import *
 
 ### END CONTEXT IMPORTS ################################################################################################
@@ -53,7 +51,7 @@ from backend.pages import *
 
 ### BASE ROUTES ########################################################################################################
 
-@app.errorhandler(HTTPException)
+#@app.errorhandler(HTTPException)
 def handle_exception(e):
     """Return JSON instead of HTML for HTTP errors."""
     # start with the correct headers and status code from the error
