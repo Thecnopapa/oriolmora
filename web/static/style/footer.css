@@ -9,3 +9,7 @@
     align-items: end;
     padding: var(--padding);
 }
+#engineer a{
+    color: var(--black);
+    text-decoration: none;
+}
