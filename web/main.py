@@ -9,6 +9,7 @@ from openpyxl.worksheet import page
 # BACKEND IMPORTS
 from backend.utilities import *
 from backend.variables import *
+from backend.database import secrets_init, get_flask_secret, database_init
 
 # WEB-RELATED IMPORTS
 from flask import Flask, render_template, redirect, request, make_response, session, url_for, jsonify, \
@@ -25,6 +26,10 @@ from werkzeug.utils import secure_filename
 
 print(" * Inititlising...")
 
+
+secrets_init()
+database_init()
+
 app = Flask(__name__)
 app.config['STATIC_FOLDER'] = STATIC_FOLDER
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -32,7 +37,8 @@ app.config['APPLICATION_ROOT'] = APPLICATION_ROOT
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 
-app.secret_key = "TEST_KEY"
+
+app.secret_key = get_flask_secret()
 
 @app.before_request
 def make_session_permanent():
@@ -51,7 +57,7 @@ from backend.pages import *
 
 ### BASE ROUTES ########################################################################################################
 
-#@app.errorhandler(HTTPException)
+@app.errorhandler(HTTPException)
 def handle_exception(e):
     """Return JSON instead of HTML for HTTP errors."""
     # start with the correct headers and status code from the error

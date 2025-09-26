@@ -8,8 +8,8 @@ STORAGE_URL_SINGLE = "https://firebasestorage.googleapis.com/v0/b/oriolmora.fire
 
 
 SECRET_URLS = dict(
-    flask = "",
-    service_account = "",
+    flask = "projects/1050223961125/secrets/flask/versions/1",
+    service_account = "projects/1050223961125/secrets/service_account/versions/1",
 )
 
 

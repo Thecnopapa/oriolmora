@@ -1,12 +1,12 @@
 from flask import render_template
-from .database import hi
+from .database import get_products
 
 
 def template(template, lan):
+    products = get_products()
 
 
-
-    return render_template(template, lan=lan)
+    return render_template(template, lan=lan, products=products)
 
 
 
