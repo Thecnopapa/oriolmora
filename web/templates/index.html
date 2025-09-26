@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 
+{% block imports %}
+<link href='/style/index.css' as='style' rel='preload'>
+<link href='/style/index.css' rel='stylesheet'>
+{% endblock %}
+
+
 {% block content %}
 <div class="content-index">
-
+    <div class="gallery-index">
+        {% for product in products %}
+            <div class="gallery-item">product</div>
+        {% endfor %}
+    </div>
 
 
 </div>

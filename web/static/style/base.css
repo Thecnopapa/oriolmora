@@ -82,8 +82,10 @@ html{
 body {
     padding: 0 0;
     margin: 0 0;
+    width: 100vh;
     min-width: 100vw;
     max-width: 100vw;
+    height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
     overflow: scroll;
@@ -94,14 +96,17 @@ body {
 }
 
 #content{
+    height: fit-content;
+    width: var(--padded-width);
+    max-width: var(--padded-width);
     min-height: calc(84vh - var(--padding) * 2);
-    min-width: var(--padded-width);
     position: relative;
     margin-top: 8vh;
     left: 0;
     z-index: 10;
     padding: var(--padding);
     background-image: url("/media/paper.png");
+    overflow-x: hidden;
 
 
 }
