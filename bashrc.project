@@ -127,7 +127,12 @@ prompt_setup(){
   }
   PS1="${YELLOW}@\u${EC} ${CYAN}(\[\e[$(git_pushed)m\]${PROJECT_NAME}${CYAN}\[\e[$(git_commits)m\]-${GIT_BRANCH}${EC}${CYAN})${GREEN} ($(echo "${CONDA_PREFIX}" | rev | cut -d "/" -f1| rev))${BLUE}:\w ${EC}$ "
 }
-PROMPT_COMMAND='prompt_setup'
+
+if [[ $* == *"safe"* ]]; then
+  echo "* SAFE mode"
+else
+  PROMPT_COMMAND='prompt_setup'
+fi
 
 
 alias bashrc="vim $RCFILE"
