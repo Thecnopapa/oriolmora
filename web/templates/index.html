@@ -9,10 +9,13 @@
 
 {% block content %}
 <div class="content-index">
-    <div class="gallery-index">
+    <div class="gallery-index horizontal-scroll">
         {% for product in products %}
-            <div class="gallery-item">product</div>
+            <img class="gallery-item normal-image" background="https://firebasestorage.googleapis.com/v0/b/oriolmora.firebasestorage.app/o/media%2Fproducts%2F{{product.image}}?alt=media">
         {% endfor %}
+        <div class="arrow-container left" onmousedown="this.parentElement.scrollLeft -= this.parentElement.firstElementChild.offsetWidth"><div class="arrow left"></div></div>
+        <div class="arrow-container right" onmousedown="this.parentElement.scrollLeft += this.parentElement.firstElementChild.offsetWidth"><div class="arrow right"></div></div>
+
     </div>
 
 

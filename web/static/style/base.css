@@ -13,14 +13,15 @@
 }
 
 
-/*@font-face {
+@font-face {
   font-family: myFont;
-  src: url('/static/fonts/AlteHaasGroteskRegular.ttf');
+  src: url('/static/fonts/Averta-Regular.ttf');
 }
 
 * {
     font-family: myFont;
-}*/
+    font-weight: normal;
+}
 
 
 *{
@@ -42,14 +43,15 @@ html{
     overflow: hidden;
     --padding: 1vw; /* GLOBAL PADDING */
     --padding-large: 8vh;
-	font-size: 16px; /* GLOBAL FONT-SIZE */
+	font-size: 14px; /* GLOBAL FONT-SIZE */
 
     --padding-horizontal: 0 var(--padding);
     --padding-vertical: var(--padding) 0;
     --padded-width: calc(100% - var(--padding) * 2);
     --padded-height: calc(100% - var(--padding) * 2);
     --white: white;
-    --white-transparent: #FFFFFFCC;
+    --white-translucid: #FFFFFFCC;
+    --white-transparent: rgba(255, 255, 255, 0.5);
     --black: black;
 
 }
@@ -66,6 +68,7 @@ html{
 *{
 	font-size: 1em;
     scroll-behavior:smooth;
+    transition: 1s;
 }
 
 /* KEYWORDS */
@@ -108,5 +111,42 @@ body {
     background-image: url("/media/paper.png");
     overflow-x: hidden;
 
+}
 
+.arrow-container.left, .arrow-container.right {
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--white-transparent);
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+
+}
+.arrow-container.left{
+    left: var(--padding);
+}
+.arrow-container.right {
+    right: var(--padding);
+}
+
+.arrow.left, .arrow.right{
+    height: 0.8rem;
+	width: 0.8rem;
+	min-width: 0.8rem;
+	border-top:var(--black) 0.2rem solid;
+	border-right: var(--black) 0.2rem solid;
+	border-bottom:transparent 0.2rem solid;
+	border-left: transparent 0.2rem solid;
+
+}
+.arrow.left{
+    transform: translate(25%,0) rotate(-135deg);
+	-webkit-transform: translate(25%,0) rotate(-135deg) ;
+}
+.arrow.right{
+	transform: translate(-25%, 0) rotate(45deg);
+	-webkit-transform:translate(-25%, 0) rotate(45deg) ;
 }

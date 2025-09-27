@@ -6,32 +6,47 @@
     max-width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .gallery-index{
-    height:100%;
+    height:fit-content;
     width:100%;
-    max-width: 100%;
+    max-width: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
-
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-left: 40%;
+    padding-right: 40%;
 }
-
-
-
-
-
 
 
 .gallery-item{
-    min-height: 40vh;
-    min-width: 60vh;
-    background-color: purple;
-    padding: var(--padding);
+    height: 40vh;
+    width: fit-content;
     margin-right: var(--padding-large);
+    border: none;
 }
+
+
 .gallery-item:first-child{
-    margin-left: calc(var(--padding-large) * 6);
+
 }
+
+.content-index .arrow-container.right{
+    right: calc(var(--padding) * -2);
+}
+.content-index .arrow-container.left{
+    left: calc(var(--padding) * -2);
+}
+
+.content-index:hover .arrow-container.right{
+    right: calc(var(--padding) * 2);
+}
+.content-index:hover .arrow-container.left{
+    left: calc(var(--padding) * 2);
+}
+
+

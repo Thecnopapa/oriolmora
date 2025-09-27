@@ -145,6 +145,8 @@ alias top="echo -en \"\033]0;Top\a\" && top"
 
 alias please="sudo"
 
+gcloud config set project $PROJECT_NAME
+gcloud auth application-default set-quota-project $PROJECT_NAME
 
 
 pull(){
@@ -191,7 +193,7 @@ upload (){
 
 deploy (){
   echo -en "\033]0;Web Deploy\a"
-	cd $FOLDER_PATH && gcloud run deploy test --source .
+	cd $FOLDER_PATH && gcloud run deploy test --source web
 }
 latest () {
   cd $FOLDER_PATH && gcloud run services update-traffic --to-latest

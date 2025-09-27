@@ -10,6 +10,7 @@
     justify-content: start;
     align-items: center;
     background-color: var(--white);
+
 }
 
 .logo{
@@ -37,4 +38,10 @@
     font-size: 1.2rem;
     width: var(--padded-width);
     height: 2rem;
+    cursor: pointer;
+}
+.header-button:hover{
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+
 }
