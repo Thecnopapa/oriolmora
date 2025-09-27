@@ -43,5 +43,42 @@
 .header-button:hover{
     text-decoration: underline;
     text-underline-offset: 0.25rem;
+}
 
+.menu{
+    display: flex;
+    height: fit-content;
+}
+.header-button{
+    display: none;
+}
+
+@media screen and (orientation: portrait) {
+    .logo{
+        height: var(--padding-large);
+        width: var(--padding-large);
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        height: var(--padding-large);
+        width: var(--padded-width);
+        padding: var(--padding);
+        align-items: center;
+    }
+    .header-button{
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .name{
+        background-color: var(--white);
+        color: var(--black);
+        margin: 0;
+    }
+    .menu-button{
+        display: flex;
+    }
 }

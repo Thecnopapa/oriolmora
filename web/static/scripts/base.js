@@ -9,29 +9,30 @@ window.addEventListener('load', event => {
 function init(){
     let horizontalScrollElements = [...document.getElementsByClassName("horizontal-scroll")];
     horizontalScrollElements.forEach(element => {
-        element.addEventListener("wheel", e => {
-            console.log("Wheel");
-            if (Math.abs(e.deltaY) > 0 && e.deltaX === 0){
-                element.scrollLeft += e.deltaY*2;
-                console.log(e.deltaY, element.scrollLeft);
-            }
-        });
-        element.addEventListener("scrollend", e => {
-            let closestElement = document.elementFromPoint(document.body.offsetWidth / 2, document.body.offsetHeight / 2);
-            console.log(closestElement);
-            //element.scrollTo(closestElement.scrollLeft, 0);
-            //console.log(closestElement.scrollLeft);
-            closestElement.scrollIntoView({block: "center", inline: "center"});
-
-        })
-       /*[...element.children].forEach(c => {c.addEventListener("wheel", e => {
-            element.scrollLeft += e.deltaY * 2
-            console.log(e.deltaY, element.scrollLeft);
-
-        })})*/
+        verticalToHorizontal(element);
     })
     loadAllImages()
 }
+
+
+function verticalToHorizontal(element){
+    if (window.innerHeight < element.innerWidth){
+        element.addEventListener("wheel", e => {
+                console.log("Wheel");
+                if (Math.abs(e.deltaY) > 0 && e.deltaX === 0){
+                    element.scrollLeft += e.deltaY*2;
+                    console.log(e.deltaY, element.scrollLeft);
+                }
+            });
+            element.addEventListener("scrollend", e => {
+                console.log(document.elementFromPoint(document.body.offsetWidth / 2, document.body.offsetHeight / 2));
+
+                document.elementFromPoint(document.body.offsetWidth / 2, document.body.offsetHeight / 2).scrollIntoView({block: "center", inline: "center"});
+            })
+            //element.addEventListener("touchend", e => {console.log("touchend");document.elementFromPoint(document.body.offsetWidth / 2, document.body.offsetHeight / 2).scrollIntoView({block: "center", inline: "center"});})
+    }
+}
+
 
 function loadAllImages() {
     loadImages("fast");

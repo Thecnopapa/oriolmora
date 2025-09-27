@@ -150,3 +150,21 @@ body {
 	transform: translate(-25%, 0) rotate(45deg);
 	-webkit-transform:translate(-25%, 0) rotate(45deg) ;
 }
+
+
+
+
+
+
+
+
+@media screen and (orientation: portrait) {
+    html{
+        font-size: 14px;
+        --padding: 1vh;
+    }
+}
+
+
+
+
